@@ -1,0 +1,447 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================================
+   HERO
+   ====================================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+/* Decorative radial backgrounds */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 147, 90, 0.12);
+}
+
+.hero-bg-circle-1 {
+  width: 60vmin;
+  height: 60vmin;
+  right: -10vmin;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-bg-circle-2 {
+  width: 45vmin;
+  height: 45vmin;
+  right: 2.5vmin;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  padding-top: calc(var(--header-height) + 48px);
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* SVG clock */
+.hero-clock {
+  color: var(--gold);
+  opacity: 0.5;
+  animation: rotateSlow 60s linear infinite;
+  margin-bottom: -8px;
+}
+
+/* Hero title */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.hero-title-line {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 96px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: block;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-title-accent {
+  color: var(--accent);
+  animation-delay: 0.12s;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 0;
+  max-width: 460px;
+  animation: fadeUp 0.8s 0.22s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+/* Metrics */
+.hero-metrics {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  margin-top: 8px;
+  animation: fadeIn 0.8s 0.5s ease both;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.metric-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.metric-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--line);
+}
+
+/* Scroll hint */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+}
+
+.hero-scroll-hint span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--accent);
+  animation: fadeUp 1s 0.8s ease both;
+}
+
+.hero-scroll-hint p {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0;
+  writing-mode: horizontal-tb;
+}
+
+/* ======================================================
+   SERVICES TEASER
+   ====================================================== */
+
+.services-teaser {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 48px 36px;
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  background: var(--surface-warm);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+
+.service-card-accent {
+  background: var(--bg-soft);
+}
+
+.service-roman {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: rgba(26, 21, 18, 0.06);
+  line-height: 1;
+  margin-bottom: -4px;
+  letter-spacing: 0.04em;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.service-card p {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+  flex: 1;
+}
+
+.service-link {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 8px;
+}
+
+/* ======================================================
+   BRANDS SECTION
+   ====================================================== */
+
+.brands-section {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.brands-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Scrolling ticker */
+.brands-ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.brands-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 35s linear infinite;
+}
+
+.brand-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
+  padding: 18px 48px;
+  border-right: 1px solid var(--line-soft);
+}
+
+.brand-dot {
+  color: var(--gold);
+  font-size: 7px;
+  opacity: 0.6;
+}
+
+/* Static brand grid */
+.brands-grid-container {
+  padding-bottom: 0;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.brand-badge {
+  background: var(--surface);
+  padding: 20px 16px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.brand-badge:hover {
+  background: var(--text);
+  color: var(--gold-light);
+}
+
+/* ======================================================
+   CTA SECTION
+   ====================================================== */
+
+.cta-section {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.cta-deco {
+  color: var(--gold);
+  opacity: 0.45;
+}
+
+.cta-address {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 2;
+  color: var(--muted);
+  margin: 0;
+}
+
+.cta-address a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.cta-address a:hover {
+  color: var(--accent-dark);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-map {
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.cta-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: sepia(0.3) contrast(0.95);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 860px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-metrics {
+    gap: 24px;
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}

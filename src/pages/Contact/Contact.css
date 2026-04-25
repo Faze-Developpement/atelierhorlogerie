@@ -1,0 +1,180 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Hero ---- */
+
+.page-hero {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  animation: fadeUp 0.6s ease both;
+}
+
+.page-hero .section-title {
+  margin-bottom: 16px;
+}
+
+/* ---- Section layout ---- */
+
+.contact-section {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ======================================================
+   FORM
+   ====================================================== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-optional {
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  font-size: 9px;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 160px;
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.form-note {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   ASIDE INFO
+   ====================================================== */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-block:first-child {
+  padding-top: 0;
+}
+
+.info-block .eyebrow {
+  margin-bottom: 4px;
+}
+
+.info-block address {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+.info-block a {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-decoration: none;
+  display: block;
+  transition: color 0.15s ease;
+}
+
+.info-block a:hover {
+  color: var(--accent-dark);
+}
+
+.info-block p {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Decorative clock in sidebar */
+.contact-clock {
+  color: var(--gold);
+  opacity: 0.25;
+  padding: 24px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-info {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

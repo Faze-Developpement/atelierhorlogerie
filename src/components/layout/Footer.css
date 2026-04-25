@@ -1,0 +1,163 @@
+.footer {
+  background: var(--text);
+  color: #E8E4DD;
+  padding-top: 60px;
+  border-top: 1px solid var(--line);
+}
+
+/* Decorative ornament clock at top */
+.footer-ornament {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+  margin: 0 auto 48px;
+  color: var(--gold);
+}
+
+.footer-ornament span {
+  flex: 1;
+  height: 1px;
+  background: rgba(184, 147, 90, 0.3);
+}
+
+.footer-ornament svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ---- Grid ---- */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  padding-bottom: 56px;
+}
+
+/* ---- Brand block ---- */
+
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F0EBE2;
+  margin: 0 0 6px;
+}
+
+.footer-tagline {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 18px;
+  opacity: 0.8;
+}
+
+.footer-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(232, 228, 221, 0.55);
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ---- Columns ---- */
+
+.footer-nav,
+.footer-contact,
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-nav h4,
+.footer-contact h4,
+.footer-hours h4 {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(184, 147, 90, 0.2);
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-contact address,
+.footer-hours p {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(232, 228, 221, 0.55);
+  text-decoration: none;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: color 0.15s ease;
+  font-style: normal;
+  line-height: 1.7;
+  display: block;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: var(--gold-light);
+}
+
+.footer-hours p {
+  margin: 0;
+}
+
+/* ---- Bottom bar ---- */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 18px 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 221, 0.3);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
